@@ -1,8 +1,11 @@
+
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
+import { ProjectDetailPage } from './../project-detail/project-detail';
 import { Project } from './../../assets/models/project';
 import { Review } from './../../assets/models/review';
+import { ProjectCard } from './../../assets/models/project-card';
 
 /**
  * Generated class for the ProjectListPage page.
@@ -17,21 +20,22 @@ import { Review } from './../../assets/models/review';
 })
 export class ProjectListPage {
 
-  project1 = new Project("sunny", "Projet 1");
-  project2 = new Project("cloudy", "Projet 2");
-
-  review1 = new Review("blablabal");
-  review2 = new Review("bololol");
-
-  reviews = [this.review1, this.review2]
-
-  projects = [this.project1, this.project2]
-
+  project1=new Project();
+  selectedProject : Project;
+ 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.project1.name="project1"
+    this.project1.numberOfReviews=3
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ProjectListPage');
+  }
+
+  showDetails(project : Project){
+    //this.selectedProject= project;
+    this.navCtrl.push(ProjectDetailPage) //doit dépendre d'un project 
+
   }
 
 }

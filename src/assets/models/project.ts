@@ -1,18 +1,25 @@
-import {Review} from './review';
+import { Review } from './review';
+import { Weather } from './weather';
 
 export class Project {
     
-    weather: String;
-    projectName: String;
+    weather: Weather;
+    name: String; 
+    description : String;
+    session :String;
+    beginningDate : Date;
+    endingDate : Date;
+    students : String[];
+   
+    numberOfReviews: Number;
+    reviews : Array<Review>;
     importantReviews : Array<Review>;
-    
-    constructor(weather : String, projectName : String){
-        this.weather = weather;
-        this.projectName = projectName;
-        this.importantReviews= [];
+    constructor(){
+       
     }
 
-    setImportantReviews(reviews: Array<Review>){
-        this.importantReviews = reviews;
+    setImportantReviews(importantReviews: Array<Review>){
+        this.reviews = importantReviews;
+        this.numberOfReviews=this.reviews.length;
     }
 }

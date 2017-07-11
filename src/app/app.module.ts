@@ -9,6 +9,7 @@ import { MyApp } from './app.component';
 import { LoginPage } from '../pages/login/login';
 import { ProjectListPage } from './../pages/project-list/project-list';
 import { ProjectListPageModule } from './../pages/project-list/project-list.module';
+import { ProjectDetailPageModule } from './../pages/project-detail/project-detail.module';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { ProjectListPageModule } from './../pages/project-list/project-list.modu
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    ProjectListPageModule
+    ProjectListPageModule,
+    ProjectDetailPageModule,
   ],
   bootstrap: [IonicApp],
   entryComponents: [

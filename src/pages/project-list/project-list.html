@@ -9,7 +9,13 @@
 
 
 <ion-content padding>
-    <ion-card *ngFor="let project of projects">
-      <ion-card-content>{{project.projectName}}</ion-card-content>
+    <ion-card  style = "background-color: #0cf710">
+      <ion-card-header >
+        <ion-item (click)="showDetails()" style= "background-color : transparent">
+          <ion-icon name="sunny" item-start></ion-icon>
+          Nom du projet
+         <ion-badge item-end>2</ion-badge>
+        </ion-item>
+      </ion-card-header>
     </ion-card>
 </ion-content>
